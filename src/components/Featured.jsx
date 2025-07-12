@@ -54,10 +54,10 @@ const categories = [
 
 export default function Featured() {
 return (
-    <div className=" py-12 px-20 bg-white">
+    <div className=" py-12 px-6 md:px-4 lg:px-20 bg-white">
     <div className="flex justify-center items-center ">
         <div>
-       <h2 className="text-3xl font-bold flex text-center justify-center items-center mb-6">
+        <h2 className="text-3xl font-bold flex text-center justify-center items-center mb-6">
             Featured 
             <div className="border border-[#FF3C3C] h-1 w-7 bg-[#FF3C3C] mt-7 mx-2"></div>
             <span className="text-[#FF3C3C]">Categories</span>
@@ -72,6 +72,8 @@ return (
         slidesPerView={5}
         pagination={{ clickable: true }}
         breakpoints={{
+        0: { slidesPerView: 1 },
+        640: { slidesPerView: 1 },
         768: { slidesPerView: 3 },
         1024: { slidesPerView: 5 },
         }}

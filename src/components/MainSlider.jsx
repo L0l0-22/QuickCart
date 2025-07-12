@@ -65,36 +65,47 @@ export default function MainSlider() {
         </Swiper>
         <style>
           {`
-          .swiper-pagination-bullet {
-            background-color: #d1d5db !important;
-            width: 30px !important;
-            height: 5px !important;
-            border-radius: 5px !important;
-            opacity: 0.6 !important;
-          }
-          .swiper-pagination-bullet-active {
-            background-color: #FF3C3C !important;
-            opacity: 1 !important;
-            width: 30px !important;
-            height: 5px !important;
-            border-radius: 5px !important;
-          }
-          .swiper-button-prev,
-          .swiper-button-next {
-            background: rgba(255, 255, 255, 0.5);
-            width: 40px;
-            height: 40px;
-            border-radius: 9999px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          }
-          .swiper-button-prev::after,
-          .swiper-button-next::after {
-            font-size: 20px;
-            color: #02478d;
-            font-weight: 700;
-          }
+            .swiper-pagination-bullet {
+              background-color: #d1d5db !important;
+              width: 30px !important;
+              height: 5px !important;
+              border-radius: 5px !important;
+              opacity: 0.6 !important;
+            }
+            .swiper-pagination-bullet-active {
+              background-color: #FF3C3C !important;
+              opacity: 1 !important;
+              width: 30px !important;
+              height: 5px !important;
+              border-radius: 5px !important;
+            }
+            .swiper-button-prev,
+            .swiper-button-next {
+              background: rgba(255, 255, 255, 0.5);
+              width: 40px;
+              height: 40px;
+              border-radius: 9999px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+            .swiper-button-prev::after,
+            .swiper-button-next::after {
+              font-size: 20px;
+              color: #02478d;
+              font-weight: 700;
+            }
+            @media (max-width: 640px) {
+              .swiper-button-prev,
+              .swiper-button-next {
+                width: 28px !important;
+                height: 28px !important;
+              }
+              .swiper-button-prev::after,
+              .swiper-button-next::after {
+                font-size: 14px !important;
+              }
+            }
           `}
         </style>
         <div className="relative w-full z-30 bg-gray-100 ">

@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import SecNavbar from './components/SecNavbar';
 import Footer from './components/Footer';
+import ProductDetails from './pages/ProductDetails';
 
 function App() {
   return (
@@ -11,8 +12,9 @@ function App() {
       <SecNavbar/>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/productdetails" element={<ProductDetails />} />
       </Routes>
-       <Footer />
+      <Footer />
     </>
   );
 }

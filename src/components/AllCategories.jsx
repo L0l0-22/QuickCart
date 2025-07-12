@@ -45,8 +45,9 @@ export default function AllCategories() {
           }}
           modules={[FreeMode, Pagination]}
           breakpoints={{
-            640: { slidesPerView: 5 },
-            768: { slidesPerView: 8 },
+            0: { slidesPerView: 2.5 },
+            640: { slidesPerView: 3 },
+            768: { slidesPerView: 5 },
             1024: { slidesPerView: 10 },
           }}
           className="scrollbar-hide relative pb-12"

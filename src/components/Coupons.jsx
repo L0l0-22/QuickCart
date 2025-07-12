@@ -4,12 +4,12 @@ import { FaTag } from 'react-icons/fa';
 export default function Coupons() {
   return (
     <div className="bg-gradient-to-r from-[#A6A6A6] to-[#1E1E1E] text-white py-10 px-6 ">
-      <div className="max-w-6xl mx-auto text-center space-y-6">
+      <div className="max-w-full lg:max-w-6xl lg:mx-auto text-center md:space-y-3 lg:space-y-6 space-y-6">
         <div className="flex justify-center items-center gap-2 text-red-400 font-semibold text-sm uppercase tracking-wide">
           <FaTag size={16} />
           Black Friday Sale 20%
         </div>
-        <h2 className="text-4xl sm:text-5xl font-extrabold leading-snug">
+        <h2 className="text-3xl md:text-4xl font-extrabold leading-snug">
           Save up to
           <span className="inline-block mx-3 align-middle">
             <div className="w-12 h-1 bg-redS rounded-sm mt-3 mx-auto"></div>

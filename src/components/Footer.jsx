@@ -6,13 +6,13 @@ import { NavLink } from 'react-router-dom';
 export default function Footer() {
   return (
     <footer className="bg-gradient-to-r from-[#1E1E1E] to-[#3A3A3A] text-gray-300 mt-12 ">
-      <div className="px-6 md:px-24 py-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-7 gap-10">
+      <div className="px-6 lg:px-24 py-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-10">
         {/* Logo & Description */}
         <div className="col-span-2">
           <NavLink to="/">
             <img src={logo} alt="QuickCart Logo" className="w-[150px] h-auto mb-3" />
           </NavLink>
-            <p className="text-gray-300 text-sm max-w-sm leading-5">
+            <p className="text-gray-300 text-sm max-w-sm leading-6 lg:leading-5">
             QuickCart is your ultimate solution for launching a modern, high-performance e-commerce platform. With ready-to-use components, clean design, and full customization flexibility, it helps you build, manage, and scale your online store effortlessly.
             </p>
         </div>
@@ -23,15 +23,6 @@ export default function Footer() {
             <li>Clothing</li>
             <li>Accessories</li>
             <li>Gift Cards</li>
-          </ul>
-        </div>
-        <div>
-          <h4 className="text-white font-semibold mb-3 text-lg">Collections</h4>
-          <ul className="space-y-2 text-gray-400">
-            <li>Summer</li>
-            <li>Autumn</li>
-            <li>Winter</li>
-            <li>Spring</li>
           </ul>
         </div>
         <div>
@@ -62,9 +53,9 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-gray-300 py-4 px-6 flex flex-col sm:flex-row justify-between items-center">
+      <div className="border-t border-gray-300 py-4 px-2 lg:px-6 flex flex-col sm:flex-row justify-between items-center">
         <p>&copy; 2025 - All rights reserved.</p>
-        <div className="flex space-x-6 mt-2 sm:mt-0">
+        <div className="flex space-x-6 mt-2 sm:mt-0 text-xs md:text-base">
           <a href="#" className="hover:text-redS">Data setting</a>
           <a href="#" className="hover:text-redS">Privacy policy</a>
           <a href="#" className="hover:text-redS">Terms & Conditions</a>

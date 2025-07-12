@@ -33,7 +33,6 @@ const reasonsToShop = [
     img: playstation,
     },
 ];
-
 const megaDeals = [
     {
     label: 'Fashion deals',
@@ -65,8 +64,7 @@ const megaDeals = [
 
 return (
     <section className="bg-gray-100 py-10 px-4">
-    <div className="mx-20 grid grid-cols-1 md:grid-cols-3 gap-6">
-
+    <div className="lg:mx-20 grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Left Column */}
         <div className="bg-white p-4 flex flex-col rounded-lg">
         <h2 className="mb-5 text-main font-bold text-2xl">More reasons to shop</h2>

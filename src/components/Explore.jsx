@@ -11,8 +11,10 @@ import flamingo from "../assets/flamingo.png"
 import speaker from "../assets/speaker.png"
 import { FaRegHeart } from 'react-icons/fa';
 import { AiFillStar, AiOutlineStar } from "react-icons/ai"; 
+import { useNavigate } from 'react-router-dom';
 
 export default function Explore() {
+const navigate = useNavigate();
 const products = [
 {
     id: 1,
@@ -131,13 +133,13 @@ const categories = [
 ];
 const [activeCategory, setActiveCategory] = useState('All');
 return (
-    <div className=" px-24 py-10 bg-gray-100">
+    <div className="px-4 lg:px-24 py-10 bg-gray-100">
     <h2 className="text-3xl font-bold flex text-center justify-center items-center mb-6">
         Explore 
     <div className="border border-[#FF3C3C] h-1 w-7 bg-[#FF3C3C] mt-7 mx-2"></div>
     <span className="text-[#FF3C3C]">Top Picks</span>
     </h2>
-    <div className="flex justify-center space-x-6 mb-10 overflow-x-auto font-bold text-base">
+    <div className="flex flex-wrap md:flex-nowrap justify-center space-x-6 mb-10 overflow-x-auto font-bold text-base">
         {categories.map((cat) => (
         <button
             key={cat}
@@ -150,7 +152,7 @@ return (
         </button>
         ))}
     </div>
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
     {products
         .filter((product) =>
         activeCategory === 'All' ? true : product.category === activeCategory
@@ -158,47 +160,52 @@ return (
         .map((product) => (
         <div
             key={product.id}
-            className="bg-white rounded-xl p-4 shadow-sm border relative flex flex-col justify-between"
-        >
+            className="bg-white rounded-xl p-4 shadow-sm border relative flex flex-col justify-between cursor-pointer hover:shadow-md transition"
+            onClick={() => navigate(`/productdetails`)}
+            >
             {product.isNew && (
-            <span className="absolute top-3 left-3 bg-redS text-white text-xs px-2 py-1 rounded">
+                <span className="absolute top-3 left-3 bg-redS text-white text-xs px-2 py-1 rounded">
                 New
-            </span>
+                </span>
             )}
-            {product.tag && !product.isNew && (
-            <span className="absolute top-3 left-3 bg-green-500 text-white text-xs px-2 py-1 rounded">
-                {product.tag}
-            </span>
-            )}
-            <span className="absolute top-3 right-3 bg-gray-100 text-gray-700 p-2 overflow-visible rounded-full cursor-pointer hover:text-redS">
-            <FaRegHeart size={20} />
+            <span
+                className="absolute top-3 right-3 bg-gray-100 text-gray-700 p-2 overflow-visible rounded-full cursor-pointer hover:text-redS"
+                onClick={(e) => e.stopPropagation()}
+            >
+                <FaRegHeart size={20} />
             </span>
             <img
-            src={product.image}
-            alt={product.name}
-            className="w-full h-40 object-contain mb-4"
+                src={product.image}
+                alt={product.name}
+                className="w-full h-40 object-contain mb-4"
             />
             <div className="flex-1 flex flex-col justify-between">
-            <div>
+                <div>
                 <h3 className="text-base font-semibold mb-1 line-clamp-2">{product.name}</h3>
                 <div className="flex items-center mb-2">
                     {[...Array(5)].map((_, index) => (
-                        <span key={index}>
-                            {index < product.rating ? (
-                                <AiFillStar className="text-yellow-400 text-xl" />
-                            ) : (
-                                <AiOutlineStar className="text-gray-300 text-xl" />
-                            )}
-                        </span>
+                    <span key={index}>
+                        {index < product.rating ? (
+                        <AiFillStar className="text-yellow-400 text-xl" />
+                        ) : (
+                        <AiOutlineStar className="text-gray-300 text-xl" />
+                        )}
+                    </span>
                     ))}
-                    <p className="text-sm text-gray-400 mb-1 ml-2"> ({product.reviews})</p>
+                    <p className="text-sm text-gray-400 mb-1 ml-2">({product.reviews})</p>
                 </div>
                 <p className="text-lg font-bold text-main">${product.price.toFixed(2)}</p>
                 <p className="text-xs text-red-500 mt-1">Available: {product.available}</p>
-            </div>
-            <button className="mt-4  bg-main text-white text-sm font-semibold py-2 rounded hover:bg-mainHover transition">
+                </div>
+                <button
+                className="mt-4 bg-main text-white text-sm font-semibold py-2 rounded hover:bg-mainHover transition"
+                onClick={(e) => {
+                    e.stopPropagation();
+                    // Add to cart logic
+                }}
+                >
                 Add to Cart
-            </button>
+                </button>
             </div>
         </div>
         ))}
